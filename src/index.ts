@@ -9,7 +9,8 @@ app.use(bodyParser.raw({ type: "application/vnd.custom-type" }));
 app.use(bodyParser.text({ type: "text/html" }));
 
 app.get("/", async (req, res) => {
-  res.json({ Hello: "asdf" });
+  
+  res.json({ Hello: "asdf", ...process.env });
 });
 
 app.listen(port, () => {
